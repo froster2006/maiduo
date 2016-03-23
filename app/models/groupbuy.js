@@ -1,13 +1,14 @@
 var mongoose = require('mongoose');
-var groupbuySchema = mongoose.Schema({
-	local: {
-		groupbuyName: String,
-		groupbuyInprocess: Boolean,
-		groupbuyDescription: String,
-		groupbuyPictureLink: String,
-		groupbuyItems: [Schema.Types.Mixed],
-		shopId: Schema.Types.ObjectId
-	}
+var Schema = mongoose.Schema,
+	ObjectId = Schema.ObjectId,
+	Types = Schema.Types;
+var groupbuySchema = new Schema({
+	groupbuyName: String,
+	groupbuyInprocess: Boolean,
+	groupbuyDescription: String,
+	groupbuyPictureLink: String,
+	groupbuyItems: [Types.Mixed],
+	shopId: ObjectId
 });
 
 module.exports = mongoose.model('groupbuy', groupbuySchema);

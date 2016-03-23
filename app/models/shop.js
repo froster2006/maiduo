@@ -1,11 +1,12 @@
 var mongoose = require('mongoose');
-var shopSchema = mongoose.Schema({
-	local: {
-		shopName: String,
-		shopAddress: String,
-		shopPhoneNumber: String,
-		shopEmail: String
-	}
+var Schema = mongoose.Schema,
+	ObjectId = Schema.ObjectId,
+	Types = Schema.Types;
+var shopSchema = new Schema({
+	shopName: String,
+	shopAddress: String,
+	shopPhoneNumber: String,
+	shopEmail: String
 });
 
 module.exports = mongoose.model('Shop', shopSchema);

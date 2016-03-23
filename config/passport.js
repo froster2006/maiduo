@@ -33,7 +33,8 @@ module.exports = function(passport) {
 					var newUser = new User();
 					newUser.local.username = email;
 					newUser.local.password = newUser.generateHash(password);
-					newUser.local.role = "standard";
+					newUser.role = "standard";
+					newUser.shopId = null;
 					newUser.save(function(err){
 						if(err)
 							throw err;
